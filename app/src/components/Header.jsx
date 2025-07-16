@@ -7,15 +7,11 @@ import icon from '../../../assets/images/icon.png'
 class Header extends Component {
     render(){
         return (
-            <View style={styles.container} 
-            >
-
+            <View style={styles.container}>
             <View style={styles.rowContainer}>
                 <Image source={icon} style={styles.image}></Image>
                 <Text style={styles.title}>Instagram</Text>
-
             </View>
-
             </View>
         )
     }
