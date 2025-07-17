@@ -1,7 +1,8 @@
 import { Component } from 'react'
 
+import Navigator from '../src/Navigator'
+
 import { SafeAreaView } from 'react-native'
-import Feed from './screens/Feed'
 
 
 export default class App extends Component {
@@ -20,7 +21,7 @@ export default class App extends Component {
 
         return ( 
             <SafeAreaView style={{flex: 1}}>
-                <Feed></Feed>
+                <Navigator></Navigator>
             </SafeAreaView>    
         )
     }
