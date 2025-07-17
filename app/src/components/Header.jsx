@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
         marginTop: Platform.OS === 'ios' ? 20 : 40,
         padding: 10, 
         borderBottomWidth: 1,
-        borderColor: '#BBB'
+        borderColor: '#BBB',
+        width: '100%'
+        
     },
     rowContainer: {
         flexDirection: 'row',
@@ -32,7 +34,8 @@ const styles = StyleSheet.create({
     image: {
         height: 30,
         width: 30,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+        justifyContent: 'flex-start'
     },
     title: {
         color: '#000',

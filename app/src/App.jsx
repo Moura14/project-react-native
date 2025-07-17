@@ -1,8 +1,7 @@
 import { Component } from 'react'
-import Header from './components/Header'
 
-import { View } from 'react-native'
-import Post from './components/Post'
+import { SafeAreaView } from 'react-native'
+import Feed from './screens/Feed'
 
 
 export default class App extends Component {
@@ -20,11 +19,9 @@ export default class App extends Component {
     ]
 
         return ( 
-           <View style={{flex: 1}}>
-                <Header></Header>
-                <Post image={require('../../assets/images/fence.jpg')} comments={comments}></Post>
-           </View>
-            
+            <SafeAreaView style={{flex: 1}}>
+                <Feed></Feed>
+            </SafeAreaView>    
         )
     }
 }
