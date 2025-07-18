@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AddPhoto from './screens/AddPhoto';
 import Feed from './screens/Feed';
+import Profile from './screens/Profile';
 
 
 const Tab = createBottomTabNavigator();
@@ -29,7 +30,7 @@ export default function TabNavigator() {
     >
       <Tab.Screen name="Feed" component={Feed} />
       <Tab.Screen name="AddPhoto" component={AddPhoto} />
-      <Tab.Screen name="Profile" component={Feed} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 }
