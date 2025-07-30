@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AddPhoto from './screens/AddPhoto';
 import Feed from './screens/Feed';
@@ -7,6 +8,7 @@ import Profile from './screens/Profile';
 
 
 const Tab = createBottomTabNavigator();
+
 
 
 export default function TabNavigator() {
