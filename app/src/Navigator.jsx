@@ -8,16 +8,28 @@ import AddPhoto from './screens/AddPhoto';
 import Feed from './screens/Feed';
 import Login from './screens/Login';
 import Profile from './screens/Profile';
+import Register from './screens/Register';
 
 const Tab = createBottomTabNavigator();
 const Switch = createSwitchNavigator();
 
 const AuthStack = createNativeStackNavigator()
+const AuthRouter = createNativeStackNavigator()
+
+
+function AuthRouters(){
+  return (
+    <AuthRouter.Navigator initialRouteName='Login'>
+      <AuthRouter.Screen name='Login' component={Login} options={{title: 'Login'}}></AuthRouter.Screen>
+      <AuthRouter.Screen name='Register' component={Register} options={{title: 'Registro'}}></AuthRouter.Screen>
+    </AuthRouter.Navigator>
+  )
+}
 
 function AuthOrProfileNavigator(){
   return (
     <AuthStack.Navigator initialRouteName='Profile' screenOptions={{headerShown: false}}>
-      <AuthStack.Screen name='Login' component={Login}></AuthStack.Screen>
+      <AuthStack.Screen name='Login' component={AuthRouters}></AuthStack.Screen>
       <AuthStack.Screen name='Profile' component={Profile}></AuthStack.Screen>
     </AuthStack.Navigator>
   )

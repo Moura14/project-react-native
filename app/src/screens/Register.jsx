@@ -8,40 +8,36 @@ import {
 } from 'react-native'
 
 
-class Login extends Component {
+class Register extends Component {
     state = {
-        email: '',
-        password: ''
+       name: '',
+       email: '',
+       password: '' 
     }
 
-    login = () => {
-        this.props.navigation.navigate('Profile')
-    }
-
-    render(){
+    render (){
         return (
             <View style={styles.container}>
-                <TextInput placeholder='Email' 
+                <TextInput placeholder='Nome' 
                 style={styles.input} 
                 autoFocus={true} 
-                keyboardType='email-address' 
-                value={this.state.email}
-                onChangeText={email => this.setState({email})}
+                value={ this.state.name} 
+                onChangeText={name => this.setState({name})}></TextInput>
+                <TextInput placeholder='Email'
+                    style={styles.input}
+                    keyboardType='email-adress'
+                    value={this.state.email}
+                    onChangeText={email => this.setState({email})}
                 ></TextInput>
-                <TextInput placeholder='Senha' 
+                <TextInput placeholder='Senha'
                 style={styles.input}
                 secureTextEntry={true}
                 value={this.state.password}
                 onChangeText={password => this.setState({password})}
                 ></TextInput>
-                <TouchableOpacity onPress={this.login} style={styles.button}>
-                    <Text style={styles.buttonText}>Login</Text>
-                    </TouchableOpacity> 
-                    <TouchableOpacity onPress={() => {
-                        this.props.navigation.navigate('Register')
-                    }} style={styles.button}>
-                    <Text style={styles.buttonText}>Criar nova conta</Text>
-                    </TouchableOpacity>      
+                <TouchableOpacity onPress={() => {}} style={styles.buttom}>
+                    <Text style={styles.buttomText}>Salvar</Text>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -54,12 +50,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    button: {
+    buttom: {
         marginTop: 30,
         padding: 10,
         backgroundColor: '#4286f4'
     },
-    buttonText: {
+    buttomText: {
         fontSize: 20,
         color: '#FFF'
     },
@@ -69,9 +65,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#EEE',
         height: 50,
         borderWidth: 1,
-        borderColor: '#333'
+        borderColor: '#333',
+        padding: 15
     }
 })
 
 
-export default Login
+export default Register
