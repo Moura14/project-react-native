@@ -1,13 +1,27 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createSwitchNavigator } from 'react-navigation-switch';
 
 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AddPhoto from './screens/AddPhoto';
 import Feed from './screens/Feed';
+import Login from './screens/Login';
 import Profile from './screens/Profile';
 
-
 const Tab = createBottomTabNavigator();
+const Switch = createSwitchNavigator();
+
+const AuthStack = createNativeStackNavigator()
+
+function AuthOrProfileNavigator(){
+  return (
+    <AuthStack.Navigator initialRouteName='Profile' screenOptions={{headerShown: false}}>
+      <AuthStack.Screen name='Login' component={Login}></AuthStack.Screen>
+      <AuthStack.Screen name='Profile' component={Profile}></AuthStack.Screen>
+    </AuthStack.Navigator>
+  )
+}
 
 
 
@@ -32,7 +46,7 @@ export default function TabNavigator() {
     >
       <Tab.Screen name="Feed" component={Feed} />
       <Tab.Screen name="AddPhoto" component={AddPhoto} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="loginOrProfileRouter" component={AuthOrProfileNavigator} />
     </Tab.Navigator>
   );
 }
